@@ -1,16 +1,17 @@
 # Astronotes
 `Notes for Python and AstroTools`  
 
-@Author: Ray
+@Author: Ray  
 @Update Time: 2022.07.08
 
 ## Python packages 
+
 ### Fundemental Python
-* Basical Python
 * Numpy
 * Matplotlib
 * os
 * Pandas
+
 ### Advanced Python
 * Seaborn
 
