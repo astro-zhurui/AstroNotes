@@ -1,10 +1,10 @@
 
 ===============================================================================
 # IMAGE and GALFIT CONTROL PARAMETERS
-A) cosmos_15302.fits            # Input data image (FITS file)
+A) cosmos_15302_new.fits            # Input data image (FITS file)
 B) imgblock.fits       # Output data image block
 C) none                # Sigma image name (made from data if blank or "none") 
-D) gauss_4.0_7x7.conv  # Input PSF image and (optional) diffusion kernel
+D) none                # Input PSF image and (optional) diffusion kernel
 E) 1                   # PSF fine sampling factor relative to data 
 F) none                # Bad pixel mask (FITS image or ASCII coord list)
 G) none                # File with parameter constraints (ASCII file) 
@@ -34,7 +34,7 @@ P) 0                   # Choose: 0=optimize, 1=model, 2=imgblock, 3=subcomps
  0) sersic                 #  object type
  1) 49.4017  49.4222  1 1  #  position x, y
  3) 20.0890     1          #  Integrated magnitude	
- 4) 5.1160      1          #  R_e (half-light radius)   [pix]
+ 4) 15          1          #  R_e (half-light radius)   [pix]
  5) 4.2490      1          #  Sersic index n (de Vaucouleurs n=4) 
  6) 0.0000      0          #     ----- 
  7) 0.0000      0          #     ----- 
