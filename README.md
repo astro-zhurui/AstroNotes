@@ -8,13 +8,18 @@
 
 ### Fundemental Python
 1. Numpy
-1. Matplotlib
-1. Pandas
-_文件处理库：_
+2.  Matplotlib
+3. Pandas
+
+_文件处理库:_
 1. os
-1. pathlib
-1. glob
-1. shutil
+2. pathlib
+3. glob
+4. shutil
+
+_并行计算:_
+1. treading
+2. multiprocessing
 
 ### Advanced Python
 1. Seaborn
