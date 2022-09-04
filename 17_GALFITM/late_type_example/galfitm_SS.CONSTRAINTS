@@ -1,0 +1,121 @@
+# Component/    parameter   constraint	Comment
+# operation	(see below)   range
+
+    3              n        0.3 to 8    # Soft constraint: Constrains the
+					# sersic index n to within
+				        # ABSOLUTE values from 0.3 to 8.
+
+    3              re        0.5 to 500    # Soft constraint: Constrains the
+					# effective radius re to within
+				        # ABSOLUTE values from 0.5 to 500
+
+    3              q         0.1 to 1.   # Soft constraint: Constrains the
+					# axis ratio q to within
+				        # ABSOLUTE values from 0.1 to 1
+
+    3              pa         -179.99 to 180 # Soft constraint: Constrains the
+					# position angle pa to within
+				        # ABSOLUTE values from -179.99 to 180
+
+    2	  	   x	     -1  1	# Soft constraint: Constrains
+					# x-position of component
+					# 2 to within +1 and -1 of the
+					# INPUT value.
+    2	  	   y	     -1  1	# Soft constraint: Constrains
+					# x-position of component
+					# 2 to within +1 and -1 of the
+					# INPUT value.
+
+    2		   mag	     10 to 26
+
+    3		   mag	     10 to 26
+
+  2_3  	   x	      offset    # Hard coupling-constraint: The x-position
+  2_3  	   y	      offset    # of components 2 and 3 are constrained
+
+
+    4	  	   x	     -1  1
+    4	  	   y	     -1  1
+    4          n        0.3 to 8
+    4          re       0.5 to 500
+    4          pa       -179.99 to 180
+    4          q        0.1 to 1
+
+# Note on parameter column:
+#   The parameter name options are x, y, mag, re (or rs -- it doesn't matter),
+#   n, alpha, beta, gamma, pa, q, c, f1a (Fourier amplitude), f1p (Fourier
+#   phase angle), f2a, f2p, r5 (coordinate rotation), etc., .  Or 
+#   alternatively, one can specify the parameter number instead (for the
+#   classical parameters only) corresponding to the same numbers in the 
+#   galfit input file.
+
+# Notes for multi-band data:
+
+# The format for specifying constraints in GALFITM is essentially the
+# same as for GALFIT3, with a few additions and caveats, as described
+# below.
+
+# Note that the way in which constraints are applied has changed in
+# GALFITM, so single-band fits with GALFITM will sometimes give
+# different results to GALFIT3.  As there are hard-coded constraints
+# (e.g. re > 0), differences can occur even without user-specified
+# constraints.
+
+# Constraints are applied in order.  However (to avoid potential
+# confusion) hard coupled-component constraints are always applied
+# last.
+
+# Fourier and rotational transforms are not supported with multi-band data.
+
+# 
+
+# Soft single-component constraints: 
+#   These constrain a single parameter to lie between two limiting
+#   values.  Unadorned parameter names imply constraints which apply
+#   across all the input wavelength bands.  However, if desired, these
+#   constraints can be applied to specific bands or Chebyshev
+#   coefficients (see below).
+#   For convenience, GALFIM introduces an option for constraining a
+#   parameter value to be within some factor of the input value.
+
+# Soft coupled-components constraints:
+#   These can only be specified in terms of Chebyshev coefficients
+#   (see below), and not in terms of actual band values.  Enabling
+#   this for band values should be possible, but remains to be
+#   implemented.  Unadorned parameter names imply constraints which
+#   affect only the zeroth-order Chebyshev coefficient (i.e. the
+#   constant value with wavelength).  They are therefore useful, and
+#   behave as expected, if you are not allowing any wavelength
+#   dependence in the parameter in question.  Any other use of
+#   soft-coupled constraints (i.e. for parameters with non-constant
+#   wavelength dependence) is inadvisable.
+
+# Hard coupled-components constraints:
+#   These can only be specified in terms of Chebyshev coefficients,
+#   (see below).  It is not possible to implement hard-coupling in
+#   terms of the actual band values.  Unadorned parameter names imply
+#   constraints which affect only the zeroth-order Chebyshev
+#   coefficient (i.e. the constant value with wavelength).  They are
+#   therefore useful, and behave as expected, if you are not allowing
+#   any wavelength dependence in the parameter in question.  If you
+#   are allowing the parameters more freedom to vary with wavelength,
+#   and you wish them to be fully-coupled then you must specify
+#   constraints for all the free Chebyshev coefficients individually.
+#   Hard coupling some, but not all, free Chebyshev coefficients for a
+#   parameter is inadvisable.
+
+# Individual band values:
+#   If you wish to apply a constraint to a specific band, the usual
+#   parameter names may be appended with "_bandlabel", where bandlabel
+#   is the label of the band in question, as specified in parameter A1
+#   of the GALFITM input file.  One may also append "_all" to
+#   explicitly indicate all bands.
+#   These contraints do not currently appear to be respected for
+#   higher-order parameters (e.g. boxiness, fourier and bending modes).
+#   If you need to constrain these parameters, please consider constraints
+#   on the Chebyshev values (i.e. 'c_0' rather than just 'c')
+
+# Cheybshev coefficient values:
+#   If you wish to constrain specific Chebyshev coefficients, the
+#   usual parameter names may be appended with "_i", where i
+#   indicates the Chebyshev coefficient (i=0...nbands)

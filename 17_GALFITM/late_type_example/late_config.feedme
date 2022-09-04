@@ -1,0 +1,90 @@
+===============================================================================
+# IMAGE and GALFIT CONTROL PARAMETERS
+A) late_g_data.fits,late_r_data.fits,late_i_data.fits,late_z_data.fits,late_y_data.fits             # 输入图像，顺序必须按波长增加(或减小)的顺序
+A1) g,r,i,z,y                       # Band labels (不区分大小写, 如果拟合单个波段, 可以省略不写)
+A2) 4866,6215,7545,8679,9633        # Band wavelengths (取波段范围的中值, 单位一致即可, 推荐全用angstrom)
+B) late_results.fits                # Output data image block (输出文件名)
+C) late_g_weight.fits,late_r_weight.fits,late_i_weight.fits,late_z_weight.fits,late_y_weight.fits   # Sigma image name (made from weight if blank or "none") (有名写名, 没有写none, galgit会自动根据图像生成, 只写一个none, 所有图像都设置为none)
+D) late_g_psf.fits,late_r_psf.fits,late_i_psf.fits,late_z_psf.fits,late_y_psf.fits                  # Input PSF image
+E) 1                                # PSF fine sampling factor relative to data (PSF精细采样因子)
+F) late_mask.fits,late_mask.fits,late_mask.fits,late_mask.fits,late_mask.fits                       # Bad pixel mask (FITS image or ASCII coord list) (不提供, 则写none; 只写一个none, 所有图像都设置为无mask)
+G) galfitm_SS.CONSTRAINTS           # File with parameter constraints (ASCII file) (限制文件的文件名, 没有则写none)
+H) 7   238   8   239                # Image region to fit (xmin xmax ymin ymax)
+I) 80    80                         # Size of the convolution box (x y)
+J) 25,25,25,25,25                   # Magnitude photometric zeropoint
+K) 0.25  0.25                       # Plate scale (dx dy)    [arcsec per pixel]
+O) regular                          # Display type (regular, curses, both)
+P) 0                                # Choose: 0=optimize, 1=model, 2=imgblock, 3=subcomps
+W) input,model,residual,component   # 输出选项
+                                    # Valid options: blank,input,model,residual -- as usual
+                                    #                component -- individual model components
+                                    #                psf -- input psf image
+                                    #                sigma -- sigma image (input or created)
+                                    #                mask -- mask image
+                                    #                nonparam -- nonparam image (if appropriate)
+                                    #                datasub -- input minus nonparam image (if appropriate)
+                                    #                nonparres -- residual minus nonparam image (if appropriate)
+                                    #                itertable -- table of parameters at each iteration
+===============================================================================
+# INITIAL FITTING PARAMETERS
+#
+# 说明: 
+# 1. Object为设置的拟合组件, 可以是以下选项中的一个: 
+#       nuker, sersic, expdisk, devauc, king, psf, gaussian, moffat,
+#       ferrer, powsersic, sky, and isophote.
+# 2. 参数列表有4列, 每一列之间用空格隔开: 
+#       第1列是参数的序号, 
+#       第2列是参数值, 
+#       第3列是拟合时对参数的要求(0固定此值,不拟合; 1在限制文件的范围内进行拟合; 2用波长的线性函数进行拟合; 3使用波长的2次函数进行拟合)
+#       第4列是参数的说明
+# 3. 参数的初始值应由其他软件给出
+# 4. 参数只给一个值表示各个band都相同
+#
+#
+# -----------------------------------------------------------------------------
+#   par)    par value(s)    fit toggle(s)    # parameter description
+# -----------------------------------------------------------------------------
+
+# Object number: 1
+ 0) sky                       #  object type
+ 1) 0,0,0,0,0      0          #  sky background at center of fitting region [ADUs]
+ 2) 0.0000         0          #  dsky/dx (sky gradient in x)
+ 3) 0.0000         0          #  dsky/dy (sky gradient in y)
+ Z) 0                         #  output option (0 = resid., 1 = Don't subtract)  (0即最终的输出图像减去模型图像)
+
+# Object number: 2
+ 0) psf                       #  object type
+ 1) 122.70         1          # position x [pixel]
+ 2) 122.04         1          # position y [pixel]
+ 3) 18.64,17.93,17.70,17.38,17.39       5       # total magnitude
+ Z) 0                         #  output option (0 = resid., 1 = Don't subtract)
+
+# Object number: 3
+ 0) sersic                    #  object type
+ 1) 122.70         1          # position x [pixel]
+ 2) 122.04         1          # position y [pixel]
+ 3) 14.52,13.93,13.58,13.48,14.16       5       # Integrated magnitude
+ 4) 35.00          2          # R_e (half-light radius)   [pix]
+ 5) 1.0000         2          #  Sersic index n (de Vaucouleurs n=4)
+ 6) 0.0000         0          #     -----
+ 7) 0.0000         0          #     -----
+ 8) 0.0000         0          #     -----
+ 9) 0.80           1          #  axis ratio (b/a)
+10) 73.66          1          #  position angle (PA) [deg: Up=0, Left=90]
+ Z) 0                         #  output option (0 = resid., 1 = Don't subtract)
+
+# Object number: 4
+ 0) sersic                    #  object type
+ 1) 55.43          1          # position x [pixel]
+ 2) 126.84         1          # position y [pixel]
+ 3) 17.57,16.36,15.89,15.86,15.23       5       # total magnitude
+ 4) 15.00          2          #  R_e (half-light radius)   [pix]
+ 5) 1.0000         2          #  Sersic index n (de Vaucouleurs n=4)
+ 6) 0.0000         0          #     -----
+ 7) 0.0000         0          #     -----
+ 8) 0.0000         0          #     -----
+ 9) 0.40           1          #  axis ratio (b/a)
+10) 20.72          1          #  position angle (PA) [deg: Up=0, Left=90]
+ Z) 0                         #  output option (0 = resid., 1 = Don't subtract)
+
+================================================================================
