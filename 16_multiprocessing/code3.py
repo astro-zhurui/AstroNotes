@@ -10,6 +10,7 @@ if __name__=='__main__':
     # ^ 创建进程池
     pool = multiprocessing.Pool()  # 默认使用全部CPU
     # pool = multiprocessing.Pool(processes=5)  # 指定使用CPU的核心数
+    pool.close()  # 执行完得关闭，不然会报错
 
     # ^ 执行运算
     # 使用刚创建的进程池pool，执行job函数的运算；
