@@ -19,9 +19,10 @@
     5. `5_model-fitting` (astropy.modeling)
 
 ### 3_IO (文件的读写)
-    1. `1_fits` (astropy.io.fits)
-    2. `2_ascii` (astropy.io.ascii)
-    3. `3_votable` (astropy.io.votable)
+    1. `1_fits-read` (介绍fits文件读取，以及FITS文件的header、image、table的相关操作；astropy.io.fits)
+    2. `2_fits-save` (介绍fits文件的保存，相关HDU、HDUList的创建；astropy.io.fits)
+    3. `2_ascii` (astropy.io.ascii)
+    4. `3_votable` (astropy.io.votable)
 
 ### 4_visualization (数据可视化; astropy.visualization)
     1. `1_plot-quantities.ipynb` (直接在图上画出astropy物理量)
