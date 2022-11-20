@@ -1,0 +1,38 @@
+================================================================================
+# IMAGE and GALFIT CONTROL PARAMETERS
+ A) UDS-22130_f160w_sci.fits            # Input data image (FITS file)
+ B) galfit_result_UDS-22130_f160w.fits  # Output data image block
+ C) none                                # Sigma image name (made from data if blank or "none")
+ D) psf_3dhst_UDS-22130_f160w.fits      # Input PSF image and (optional) diffusion kernel
+ E) 1                                   # PSF fine sampling factor relative to data
+ F) mask_UDS-22130_f160w.fits           # Bad pixel mask (FITS image or ASCII coord list)
+ G) none                                # File with parameter constraints (ASCII file)
+ H) 1  99  1  99                        # Image region to fit (xmin xmax ymin ymax)
+ I) 100  100                            # Size of the convolution box (x y)
+ J) 26.946                              # Magnitude photometric zeropoint
+ K) 0.06  0.06                          # Plate scale (dx dy) [arcsec per pixel]
+ O) regular                             # Display type (regular, curses, both)
+ P) 0                                   # Options: 0=normal run; 1,2=make model/imgblock & quit
+
+# --------------------------------------------------------------------------------
+#   par)    par value(s)    fit toggle(s)    # parameter description
+# --------------------------------------------------------------------------------
+
+# Object numlber: 1
+ 0) psf                       # object type
+ 1) 49.11  49.33         1 1  # position x, y [pixel]
+ 3) 24.51                1    # total magnitude
+ Z) 0                         # Skip this model in output image?  (yes=1, no=0)
+
+# Object number: 2
+ 0) sersic                    # object type
+ 1) 49.11  49.33         1 1  # position x, y
+ 3) 24.51                1    # Integrated magnitude
+ 4) 5.33                 1    # R_e (half-light radius) [pix]
+ 5) 1.28                 1    # Sersic index n (de Vaucouleurs n=4)
+ 6) 0.000                0    # -----
+ 7) 0.000                0    # -----
+ 8) 0.000                0    # -----
+ 9) 0.98                 1    # axis ratio (b/a)
+10) 85.56                1    # position angle (PA) [deg: Up=0, Left=90]
+ Z) 0                         # output option (0 = resid., 1 = Don't subtract)
