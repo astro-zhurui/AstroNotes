@@ -1,2 +1,0 @@
-**GALFITM tutorial**
-@Author: Ray
