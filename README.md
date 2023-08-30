@@ -43,3 +43,6 @@ _并行计算:_
     1. material: 存放下载的资料, 保留原始zip用于备份; material里面的内容请勿修改 (gitignore)
     2. example: 试验地 (gitignore)
     3. output: 存放程序输出 (gitignore)
+
+## python资源大全
+https://github.com/jobbole/awesome-python-cn
