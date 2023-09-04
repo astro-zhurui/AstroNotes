@@ -8,8 +8,10 @@
 
 ### Fundemental Python
 1. Numpy
-2.  Matplotlib
+2. Matplotlib
 3. Pandas
+4. re
+5. fnmatch
 
 _文件处理库:_
 1. os
