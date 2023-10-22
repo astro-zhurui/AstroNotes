@@ -280,7 +280,8 @@ class Zout():
         
         return ax
 
-    def show_sed_fitting(self, idx, lrange=[2000, 11000], log_wavelen=False, individual_templates=False, id_is_idx=False, ax=False):
+    def show_sed_fitting(self, idx, lrange=[2000, 11000], log_wavelen=False, 
+                         individual_templates=False, id_is_idx=False, ax=False):
         """
         plot sed fitting only\n
         # Parameters\n
@@ -371,7 +372,8 @@ class Zout():
         self.ax_pdf = self.show_pdf(_idx, ax=self.ax_pdf, zmax=self.zmax)
         self.fig.canvas.draw()
         
-    def get_eazy_sed(self, idx, mag_zp=-48.6, scale_flambda=1.e-17, individual_templates=False):
+    def get_eazy_sed(self, idx, mag_zp=-48.6, scale_flambda=1.e-17, 
+                     individual_templates=False):
 
         # load necessary parameters
         tempfilt = self.tempfilt['tempfilt']
