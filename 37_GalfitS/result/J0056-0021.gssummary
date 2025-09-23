@@ -1,0 +1,99 @@
+# target: J0056-0021
+# config file: quickstart.lyric
+# fitting mode: images - SED
+# fiting method: optimizer
+# chisq: 14326.865234375
+# reduced chisq: 0.5901172161102295
+# BIC: 14750.953125
+# fitting time: 13.054394753774007 mins
+############# data summary ############## 
+# image atals: 2mass
+#    image number: 0  band: j  chisq: [479.78613]  dof: [676.]  reduced chisq: [0.7097428]
+#    image number: 1  band: h  chisq: [266.53436]  dof: [676.]  reduced chisq: [0.3942816]
+#    image number: 2  band: ks  chisq: [353.00433]  dof: [676.]  reduced chisq: [0.52219576]
+# image atals: galex
+#    image number: 0  band: galex_fuv  chisq: [235.98044]  dof: [256.]  reduced chisq: [0.9217986]
+#    image number: 1  band: galex_nuv  chisq: [550.2049]  dof: [256.]  reduced chisq: [2.1492379]
+# image atals: sdss
+#    image number: 0  band: sloan_u  chisq: [2409.067]  dof: [4356.]  reduced chisq: [0.55304563]
+#    image number: 1  band: sloan_g  chisq: [2535.707]  dof: [4356.]  reduced chisq: [0.5821182]
+#    image number: 2  band: sloan_r  chisq: [2095.62]  dof: [4356.]  reduced chisq: [0.4810882]
+#    image number: 3  band: sloan_i  chisq: [2612.1033]  dof: [4356.]  reduced chisq: [0.5996564]
+#    image number: 4  band: sloan_z  chisq: [2788.8606]  dof: [4356.]  reduced chisq: [0.6402343]
+############ fitting summary ############ 
+# num_steps: 15000  learning_rate: 0.0008 calculate_hessian: False 
+# free parameters:
+pname    best_value
+csx_sloan_i    0.0000
+csy_sloan_i    0.0000
+csx_ks    0.0000
+csy_ks    0.0000
+csx_h    0.0000
+csy_h    0.0000
+csx_sloan_r    0.0000
+csy_sloan_r    0.0000
+csx_galex_nuv    0.0000
+csy_galex_nuv    0.0000
+csx_galex_fuv    0.6049
+csy_galex_fuv    0.8555
+csx_sloan_z    0.0000
+csy_sloan_z    0.0000
+csx_sloan_g    0.0000
+csy_sloan_g    0.0000
+csx_j    0.3257
+csy_j    0.4078
+disk_f_cont_value    -0.0031
+disk_age_value    6.7657
+disk_Z_value    0.0396
+disk_Av_value    0.3034
+logM_disk    9.9372
+AVbump_disk    0.0453
+disk_xcen    -0.0377
+disk_ycen    -0.1592
+disk_Re    2.2132
+disk_n    0.6272
+disk_ang    -29.3149
+disk_axrat    0.8630
+bulge_f_cont_value    -2.6158
+bulge_age_value    1.9951
+bulge_Z_value    0.0012
+bulge_Av_value    0.3202
+logM_bulge    9.9156
+AVbump_bulge    0.7868
+bulge_xcen    -0.1250
+bulge_ycen    -0.1778
+bulge_Re    1.3193
+bulge_n    2.6747
+bulge_ang    -6.8812
+bulge_axrat    0.7214
+# fixed parameters:
+# pname    fixed_value
+sky_sloan_i    0.0000
+sky_ks    0.0000
+sky_h    0.0000
+sky_sloan_r    0.0000
+sky_galex_nuv    0.0000
+sky_galex_fuv    0.0000
+sky_sloan_z    0.0000
+sky_sloan_g    0.0000
+csx_sloan_u    0.0000
+csy_sloan_u    0.0000
+sky_sloan_u    0.0000
+sky_j    0.0000
+disk_sigma    100.0000
+logU_disk    -3.0000
+logMdust_disk    8.1400
+Umin_disk    1.0000
+qPAH_disk    1.0000
+alphad_disk    1.0000
+gammad_disk    0.1000
+bulge_sigma    100.0000
+logU_bulge    -2.0000
+logMdust_bulge    8.1400
+Umin_bulge    1.0000
+qPAH_bulge    1.0000
+alphad_bulge    1.0000
+gammad_bulge    0.1000
+z_mygal    0.0628
+scale_mygal    1.2481
+######################################### 
